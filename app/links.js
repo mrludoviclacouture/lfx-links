@@ -26,27 +26,6 @@ const links = [
     type: 'main',
     icon: '/brand-tiktok.svg',
     on: true
-  },
-  // {
-  //   title: 'Snapchat',
-  //   url: 'https://www.snapchat.com/add/litflowx',
-  //   type: 'main',
-  //   icon: '/brand-snapchat.svg',
-  //   on: true
-  // },
-  {
-    title: 'X',
-    url: 'https://x.com/intent/user?screen_name=litflowx',
-    type: 'main',
-    icon: '/brand-x.svg',
-    on: true
-  },
-  {
-    title: 'Threads',
-    url: 'https://www.threads.com/@litflowx',
-    type: 'main',
-    icon: '/brand-threads.svg',
-    on: true
   }
 ]
 

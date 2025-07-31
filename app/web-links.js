@@ -6,17 +6,11 @@ import links from './links'
 const WebLinks = () => {
   const avatarImage = '/avatar.png'
   const titleImage = null
-  // const url = '';
-  // const username = 'litflowx'
   const name = 'Lit Flow X'
   const bio = 'Dreamy vibes X Luxury looks'
 
   const main = links.filter(el => {
     return el.type === 'main' && el.on
-  })
-
-  const alternate = links.filter(el => {
-    return el.type === 'alternate' && el.on
   })
 
   return (
@@ -81,39 +75,6 @@ const WebLinks = () => {
               ''
             )}
             {/* End Main Section */}
-
-            {/* Alternate Section */}
-            {/* {alternate.length > 0 ? (
-              <LinkSection>
-                <h3>{alternate[0].type}</h3>
-                <NewSection>
-                  <a href={alternateWebsite} target='_blank' rel='noreferrer'>
-                    <img src={'/showcase.png'} />
-                  </a>
-                </NewSection>
-                {alternate.map(i => {
-                  return (
-                    <a
-                      href={i.url}
-                      key={i.title}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      <LinkBox>
-                        <LinkTitle>
-                          <img src={i.icon} style={{ filter: 'var(--img)' }} />{' '}
-                          {i.title}
-                        </LinkTitle>{' '}
-                        <NewUp />
-                      </LinkBox>
-                    </a>
-                  )
-                })}
-              </LinkSection>
-            ) : (
-              ''
-            )} */}
-            {/* End Alternate Section */}
           </WebLinkWrap>
           {/* End Weblinks */}
         </TopPart>
@@ -376,20 +337,5 @@ const LinkTitle = styled.div`
   img {
     height: 20px;
     margin-right: 10px;
-  }
-`
-
-const NewSection = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 16px 20px;
-  img {
-    width: 100%;
-    border: 1px solid ${({ theme }) => theme.bg.secondary};
-    border-radius: 12px;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.01);
-    }
   }
 `

@@ -15,8 +15,8 @@
     "next": "^15.4.4",
     "next-seo": "^6.8.0",
     "nextjs-google-analytics": "^2.3.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "styled-components": "^6.1.19",
     "use-dark-mode": "^2.3.1"
   },
