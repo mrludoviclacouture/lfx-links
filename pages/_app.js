@@ -6,7 +6,7 @@ import Layout from '../app/layout'
 import GlobalStyle from '../app/global-style'
 import { darkTheme, lightTheme } from '../app/theme.config'
 import { GoogleAnalytics } from 'nextjs-google-analytics'
-import { DefaultSeo } from 'next-seo'
+import { generateDefaultSeo } from 'next-seo/pages'
 import SEO from '../next-seo.config'
 
 function MyApp({ Component, pageProps }) {
@@ -29,10 +29,10 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <GlobalStyle />
         <Layout>
-          <DefaultSeo
-            canonical={SEO.openGraph.url}
-            {...SEO}
-            additionalMetaTags={[
+          {generateDefaultSeo({
+            canonical: SEO.openGraph.url,
+            ...SEO,
+            additionalMetaTags: [
               {
                 name: 'keywords',
                 content: SEO.openGraph.keywords
@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps }) {
                 httpEquiv: 'x-ua-compatible',
                 content: 'IE=edge; chrome=1'
               }
-            ]}
-          />
+            ]
+          })}
           {isMounted && <Component {...pageProps} />}
         </Layout>
       </ThemeProvider>
