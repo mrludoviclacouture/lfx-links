@@ -150,7 +150,7 @@ const Title = styled.div`
   flex-direction: column;
   align-items: center;
   h1 {
-    font-family: "Special Gothic Expanded One", sans-serif;
+    font-family: 'Special Gothic Expanded One', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 38px;

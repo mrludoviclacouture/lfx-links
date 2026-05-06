@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components'
 import Layout from '../app/layout'
 import GlobalStyle from '../app/global-style'
 import { darkTheme, lightTheme } from '../app/theme.config'
-import { GoogleAnalytics } from 'nextjs-google-analytics'
 import { generateDefaultSeo } from 'next-seo/pages'
 import SEO from '../next-seo.config'
 
@@ -22,7 +21,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <GoogleAnalytics />
       <ThemeProvider theme={theme}>
         <Head>
           <meta content='width=device-width, initial-scale=1' name='viewport' />
