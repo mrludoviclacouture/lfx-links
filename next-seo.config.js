@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'Lit Flow X',
+    title: 'LFX - Lit Flow X',
     url: 'https://litflowx.vercel.app',
     description: '',
     locale: 'en_EN',

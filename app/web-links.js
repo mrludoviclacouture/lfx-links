@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 import { Container } from './reusable-styles'
 import { NewUp, OvalIcon } from './icons'
-import links from './links'
+import PROFILES from './profiles'
+import { useSocialDeepLink } from './social-deep-links'
 
 const WebLinks = () => {
   const avatarImage = '/avatar.png'
   const titleImage = null
-  const name = 'Lit Flow X'
-  const bio = 'Dreamy vibes X Luxury looks'
+  const name = 'LFX - LIT FLOW X'
+  const bio1 = 'Emotion in motion'
+  const bio2 = 'Founded'
+  const handle = '@stylerdaa'
+  const link = 'https://links.stylerdaa.com'
 
-  const main = links.filter(el => {
-    return el.type === 'main' && el.on
-  })
+  const openProfile = useSocialDeepLink({ fallbackDelay: 1500 })
 
   return (
     <LinkWrapper>
@@ -43,27 +45,38 @@ const WebLinks = () => {
           </LinkHeader>
 
           {/* Bio Section */}
-          <LinkBio>{bio && <h1>{bio} </h1>}</LinkBio>
+          <LinkBio>
+            {bio1 && <h1>{bio1}</h1>}
+            {bio2 && (
+              <h4>
+                {bio2}{' '}
+                <a href={link} rel='noreferrer'>
+                  {handle}
+                </a>
+              </h4>
+            )}
+          </LinkBio>
           {/* End Bio Section */}
 
           {/* Weblinks started */}
           <WebLinkWrap>
             {/* Main Section */}
-            {main.length > 0 ? (
+            {PROFILES.length > 0 ? (
               <LinkSection>
-                {/* <h3>{main[0].type}</h3> */}
-                {main.map(i => {
+                {PROFILES.map(({ platform, label, icon, handle }) => {
                   return (
                     <a
-                      href={i.url}
-                      key={i.title}
-                      target='_blank'
-                      rel='noreferrer'
+                      href='#'
+                      key={platform}
+                      onClick={e => {
+                        e.preventDefault()
+                        openProfile(platform, handle)
+                      }}
                     >
                       <LinkBox>
                         <LinkTitle>
-                          <img src={i.icon} style={{ filter: 'var(--img)' }} />{' '}
-                          {i.title}
+                          <img src={icon} style={{ filter: 'var(--img)' }} />{' '}
+                          {label}
                         </LinkTitle>{' '}
                         <NewUp />
                       </LinkBox>
@@ -137,9 +150,11 @@ const Title = styled.div`
   flex-direction: column;
   align-items: center;
   h1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 38px;
-    font-weight: 700;
-    letter-spacing: -2px;
+    // letter-spacing: -2px;
     // background: linear-gradient(
     //   90deg,
     //   #4ab1f1 5.71%,

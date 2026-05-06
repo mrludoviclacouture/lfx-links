@@ -52,6 +52,8 @@ html{
 }
 body {
   font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   background: ${({ theme }) => theme.bg.primary};
   color: ${({ theme }) => theme.text.primary};
   text-rendering: optimizeLegibility;
